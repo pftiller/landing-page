@@ -4,20 +4,23 @@ let header;
 let nav;
 let navItems;
 let navLinks;
+let counter = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     buildInitalNav();
-    navItems = document.querySelector('.nav-item');
-    navLinks = navItems.querySelector('a');
-    navLinks.addEventListener('click', function(e){
-        for (var i = 0; i < navItems.length; i++) {
-            navLinks.classList.remove('active');
-         }
-            e.target.classList.add('active');
-
+    navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(element => {
+        element.addEventListener('click', function (e) {
+            counter += 1;
+            console.log(counter);
+            if (counter > 1) {
+                document.querySelector('.active').classList.remove('active');
+                
+            }
+            e.target.classList.add('active')
+        })
     })
 });
-
 /**
  * Define Global Variables
  * 
