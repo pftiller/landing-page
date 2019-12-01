@@ -1,13 +1,8 @@
 # Landing Page Project
 
 ## Table of Contents
+* [About](#about)
 
-* [Instructions](#instructions)
+## About
 
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+ This project demonstrates a means by which to dynamically add links to a navigation menu based on the number of content sections in the main HTML file. Through DOM manipulation, links to each of these respective sections are automatically added to the navigation bar. These links also take on an 'active' state upon selection, indicating to the user the choice they have last made.

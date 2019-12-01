@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Loop through navigation links and add click handlers */
     navItems.forEach(element => {
         element.addEventListener('click', function (e) {
-            counter += 1;
             /* Remove 'active' classes from all nav items */
             document.querySelector('.active').classList.remove('active');
             /* Retrieve ID for anchor tag scroll reference */

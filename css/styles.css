@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Open+Sans&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F0E5D1;
     margin: 0;
@@ -11,6 +15,9 @@ main {
 
 nav {
     display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #241E16;
 }
 
 nav ul {
@@ -19,9 +26,9 @@ nav ul {
     display: flex;
     margin: 0 auto 10px;
     flex-direction: row;
-    justify-content: space-evenly;
-    list-style: none;
     background-color: #241E16;
+    justify-content: space-around;
+    list-style: none;
     padding: 15px;
     font-family: Baloo, sans-serif;
     font-size: 1.5rem;
@@ -43,14 +50,41 @@ section {
     width: 90%;
     margin: 0 auto;
     padding-top: 75px;
+    max-width: 850px;
 }
 
 footer {
     background-color: #241E16;
     color: #fff;
     text-align: center;
-    margin: 0;
-    bottom: 0;
-    height: 45px;
-    padding: 5px;
+    height: 50px;
+    padding-top: 2px;
+}
+
+@media (min-width: 555px) {
+    main {
+        padding-bottom: 375px;
+    }
+
+}
+
+@media (min-width: 675px and max-width:1199px) {
+    main {
+        padding-bottom: 450px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    main {
+        padding-bottom: 500px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 5rem;
+    }
 }
