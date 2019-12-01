@@ -9,35 +9,23 @@ let counter = 0;
 document.addEventListener('DOMContentLoaded', () => {
     buildInitalNav();
     navItems = document.querySelectorAll('.nav-item');
+    /* Loop through navigation links and add click handlers */
     navItems.forEach(element => {
         element.addEventListener('click', function (e) {
             counter += 1;
-            console.log(counter);
+            /* Handle 1st instance differently than subsequent */
             if (counter > 1) {
                 document.querySelector('.active').classList.remove('active');
-                
             }
+            /* Retrieve ID for anchor tag scroll reference */
+            let sectionId = e.target.getAttribute('href').substr(1);
+            document.getElementById(sectionId).scrollIntoView(true);
+            /* Add 'active' class to the navigation link that was clicked */
             e.target.classList.add('active')
         })
     })
 });
-/**
- * Define Global Variables
- * 
-*/
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
 let buildInitalNav = function () {
     let navText;
     let navId;
@@ -47,33 +35,11 @@ let buildInitalNav = function () {
     nav = header.querySelector('nav');
     main = document.querySelector('main');
     sections = main.querySelectorAll('section');
-    console.log(sections);
+    /* Loop through sections and retrieve properties for nav display */
     sections.forEach(element => {
         navText = element.dataset.nav;
         navId = element.id;
-            navLinks =`<li class="nav-item"><a href=#${navId}>${navText}</a></li>`
-            navbarList.insertAdjacentHTML('beforeend', navLinks);   
+        navLinks = `<li class="nav-item"><a href=#${navId}>${navText}</a></li>`
+        navbarList.insertAdjacentHTML('beforeend', navLinks);
     });
-    console.log(navbarList);
 }
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
