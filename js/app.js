@@ -4,7 +4,6 @@ let header;
 let nav;
 let navItems;
 let navLinks;
-let counter = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     buildInitalNav();
@@ -13,10 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navItems.forEach(element => {
         element.addEventListener('click', function (e) {
             counter += 1;
-            /* Handle 1st instance differently than subsequent */
-            if (counter > 1) {
-                document.querySelector('.active').classList.remove('active');
-            }
+            /* Remove 'active' classes from all nav items */
+            document.querySelector('.active').classList.remove('active');
             /* Retrieve ID for anchor tag scroll reference */
             let sectionId = e.target.getAttribute('href').substr(1);
             document.getElementById(sectionId).scrollIntoView(true);
@@ -36,10 +33,16 @@ let buildInitalNav = function () {
     main = document.querySelector('main');
     sections = main.querySelectorAll('section');
     /* Loop through sections and retrieve properties for nav display */
-    sections.forEach(element => {
+    sections.forEach((element, index) => {
         navText = element.dataset.nav;
         navId = element.id;
-        navLinks = `<li class="nav-item"><a href=#${navId}>${navText}</a></li>`
-        navbarList.insertAdjacentHTML('beforeend', navLinks);
+        /* Apply default active class to only first item */
+        if (index == 0) {
+            navLinks = `<li class="nav-item"><a class="active" href=#${navId}>${navText}</a></li>`
+            navbarList.insertAdjacentHTML('beforeend', navLinks);
+        } else {
+            navLinks = `<li class="nav-item"><a href=#${navId}>${navText}</a></li>`
+            navbarList.insertAdjacentHTML('beforeend', navLinks);
+        }
     });
 }

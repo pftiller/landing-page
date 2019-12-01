@@ -1,47 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Open+Sans&display=swap');
+
 body {
-    background-color:#F0E5D1;
-    margin:0;
+    background-color: #F0E5D1;
+    margin: 0;
 }
+
 main {
-    padding-bottom:325px;
+    padding-bottom: 325px;
 }
+
 nav {
-    display:grid;
+    display: grid;
 }
+
 nav ul {
     position: fixed;
     width: 100%;
-    display:flex;
-    margin:0 auto 10px;
+    display: flex;
+    margin: 0 auto 10px;
     flex-direction: row;
     justify-content: space-evenly;
     list-style: none;
-    background-color:#241E16;
+    background-color: #241E16;
     padding: 15px;
     font-family: Baloo, sans-serif;
     font-size: 1.5rem;
 }
-nav a, nav a:visited {
+
+nav a,
+nav a:visited {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
+
 .active {
-    background-color:#F2B138;
-    padding:15px 5px;
+    background-color: #F2B138;
+    padding: 15px 5px;
 }
+
 section {
-    font-family:"Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     width: 90%;
     margin: 0 auto;
-    padding-top:75px;
+    padding-top: 75px;
 }
+
 footer {
-    background-color:#241E16;
-    color:#fff;
-    text-align:center;
-    margin:0;
-    bottom:0;
-    height:45px;
-    padding:5px;
+    background-color: #241E16;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    bottom: 0;
+    height: 45px;
+    padding: 5px;
 }
