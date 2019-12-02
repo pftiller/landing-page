@@ -7,10 +7,16 @@
 body {
     background-color: #F0E5D1;
     margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr 50px;
+    grid-template-areas:
+        'hdr'
+        'mn'
+        'ftr';
 }
 
-main {
-    padding-bottom: 325px;
+.page-header {
+    grid-area: hdr;
 }
 
 nav {
@@ -31,7 +37,7 @@ nav ul {
     list-style: none;
     padding: 15px;
     font-family: Baloo, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 nav a,
@@ -40,7 +46,17 @@ nav a:visited {
     color: #fff;
 }
 
-.active {
+main {
+    grid-area: mn;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+h2 {
+    margin: 5px 0 10px;
+}
+
+.selected {
     background-color: #F2B138;
     padding: 15px 5px;
 }
@@ -48,37 +64,44 @@ nav a:visited {
 section {
     font-family: "Open Sans", sans-serif;
     width: 90%;
-    margin: 0 auto;
-    padding-top: 75px;
+    height: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 25%;
+    padding-top: 85px;
     max-width: 850px;
 }
 
+.active {
+    background-color: #C12432;
+    color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+section:last-of-type {
+    margin-bottom: 27.5%;
+    margin-top: 2.5%;
+}
+
 footer {
+    grid-area: ftr;
     background-color: #241E16;
     color: #fff;
     text-align: center;
-    height: 50px;
+    height: 100%;
     padding-top: 2px;
 }
 
-@media (min-width: 555px) {
-    main {
-        padding-bottom: 375px;
-    }
-
-}
-
-@media (min-width: 675px and max-width:1199px) {
-    main {
-        padding-bottom: 450px;
+@media (min-width: 480px) {
+    nav ul {
+        font-size: 1.5rem;
     }
 
 }
 
 @media (min-width: 1200px) {
-    main {
-        padding-bottom: 500px;
-    }
 
     nav ul {
         justify-content: center;

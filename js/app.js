@@ -11,13 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Loop through navigation links and add click handlers */
     navItems.forEach(element => {
         element.addEventListener('click', function (e) {
-            /* Remove 'active' classes from all nav items */
+            /* Remove 'selected' classes from all nav items */
+            document.querySelector('.selected').classList.remove('selected');
+            /* Remove 'active' classes from all sections */
             document.querySelector('.active').classList.remove('active');
             /* Retrieve ID for anchor tag scroll reference */
             let sectionId = e.target.getAttribute('href').substr(1);
-            document.getElementById(sectionId).scrollIntoView(true);
-            /* Add 'active' class to the navigation link that was clicked */
-            e.target.classList.add('active')
+            console.log('this is sectionId', sectionId);
+            let selectedSection = document.getElementById(sectionId);
+            console.log('this is selectedSection', selectedSection);
+            selectedSection.scrollIntoView(true);
+            /* Add 'active' class to the proper section */
+            console.log(selectedSection.firstElementChild)
+            selectedSection.firstElementChild.classList.add('active')
+            /* Add 'selected' class to the navigation link that was clicked */
+            e.target.classList.add('selected')
         })
     })
 });
@@ -35,9 +43,9 @@ let buildInitalNav = function () {
     sections.forEach((element, index) => {
         navText = element.dataset.nav;
         navId = element.id;
-        /* Apply default active class to only first item */
+        /* Apply default selected class to only first item */
         if (index == 0) {
-            navLinks = `<li class="nav-item"><a class="active" href=#${navId}>${navText}</a></li>`
+            navLinks = `<li class="nav-item"><a class="selected" href=#${navId}>${navText}</a></li>`
             navbarList.insertAdjacentHTML('beforeend', navLinks);
         } else {
             navLinks = `<li class="nav-item"><a href=#${navId}>${navText}</a></li>`
