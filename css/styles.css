@@ -28,6 +28,7 @@ nav {
 
 nav ul {
     position: fixed;
+    height: 50px;
     width: 100%;
     display: flex;
     margin: 0 auto 10px;
@@ -35,7 +36,6 @@ nav ul {
     background-color: #241E16;
     justify-content: space-around;
     list-style: none;
-    padding: 15px;
     font-family: Baloo, sans-serif;
     font-size: 1rem;
 }
@@ -58,7 +58,7 @@ h2 {
 
 .selected {
     background-color: #F2B138;
-    padding: 15px 5px;
+    padding: 13px 5px;
 }
 
 section {
@@ -67,8 +67,8 @@ section {
     height: 35%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
-    margin-bottom: 25%;
+    margin-top: 5px;
+    margin-bottom: 25px;
     padding-top: 85px;
     max-width: 850px;
 }
@@ -109,5 +109,10 @@ footer {
 
     nav li {
         margin: 0 5rem;
+        padding: 5px 10px;
+    }
+
+    .selected {
+        padding: 8px 10px;
     }
 }
